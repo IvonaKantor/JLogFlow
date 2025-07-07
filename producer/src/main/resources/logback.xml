@@ -5,7 +5,7 @@
 
         <encoder>
             <pattern>
-                PIZDEC %-4relative [%thread] %-5level %logger -%kvp -%msg%n
+                %-4relative [%thread] %-5level %logger -%kvp -%msg%n
             </pattern>
         </encoder>
     </appender>
