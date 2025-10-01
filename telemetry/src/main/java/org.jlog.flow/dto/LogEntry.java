@@ -60,4 +60,14 @@ public class LogEntry {
         this.threadName = threadName;
     }
 
+    @Override
+    public String toString() {
+        return "LogEntry{" +
+                "appName='" + appName + '\'' +
+                ", level='" + level + '\'' +
+                ", message'" + message + '\'' +
+                ", timestamp'" + timestamp + '\'' +
+                ", threadName'" + threadName + '}';
+
+    }
 }
