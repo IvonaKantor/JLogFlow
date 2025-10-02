@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>consumer</module>
+        <module>telemetry</module>
         <module>producer</module>
     </modules>
 
