@@ -6,3 +6,4 @@ RUN chown 1001 /work \
     && chown 1001:root /work
 
 COPY target/quarkus-app/lib/ /work/lib/
+COPY target/quarkus-app/*.jar /work/
