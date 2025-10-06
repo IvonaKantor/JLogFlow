@@ -4,3 +4,5 @@ WORKDIR /work/
 RUN chown 1001 /work \
     && chmod "g+rwX" /work \
     && chown 1001:root /work
+
+COPY target/quarkus-app/lib/ /work/lib/
