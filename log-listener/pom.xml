@@ -8,5 +8,17 @@
         <artifactId>log-analysis-system</artifactId>
         <version>1.0.0</version>
     </parent>
+    <artifactId>log-listener</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-messaging-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
+        </dependency>
+    </dependencies>
 </project>
