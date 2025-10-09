@@ -4,6 +4,7 @@ services:
 
   log-listener:
     build: ./log-listener
+    image: nginx:latest
 
   log-processing:
     build: ./log-processing
