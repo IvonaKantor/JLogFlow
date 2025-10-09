@@ -1,4 +1,4 @@
-package org.jlog.flow.filter;
+package org.jlog.flow.service;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.filter.Filter;
