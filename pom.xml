@@ -9,7 +9,7 @@
 
     <modules>
         <module>telemetry</module>
-        <module>producer</module>
+        <module>log-processing</module>
         <module>log-listener</module>
     </modules>
 
