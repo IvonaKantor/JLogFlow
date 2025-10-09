@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+
+  log-listener:
+    build: ./log-listener
+
+  log-processing:
+    build: ./log-processing
+
+  telemetry:
+    build:  ./telemetry
+
+  web-server:
+    build: ./web-server
+    ports:
+      - "8080:8080"
+
+  web-app:
+    build: ./web-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - web-server
