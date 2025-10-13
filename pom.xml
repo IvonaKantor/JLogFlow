@@ -11,6 +11,7 @@
         <module>telemetry</module>
         <module>log-processing</module>
         <module>log-listener</module>
+        <module>web-server</module>
     </modules>
 
     <properties>
