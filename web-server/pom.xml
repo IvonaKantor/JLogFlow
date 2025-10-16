@@ -12,4 +12,10 @@
 
     <artifactId>web-server</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-websockets</artifactId>
+        </dependency>
+    </dependencies>
 </project>
