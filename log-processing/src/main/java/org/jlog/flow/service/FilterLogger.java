@@ -10,11 +10,11 @@ public class FilterLogger extends Filter<ILoggingEvent> {
     @Override
     public FilterReply decide(ILoggingEvent event) {
         if (event.getMessage().contains("sensitive_data")) {
-            return FilterReply.DENY; // Deny logging events containing "sensitive_data"
+            return FilterReply.DENY;
         }
         if (event.getLoggerName().startsWith("org.acme.noisy")) {
-            return FilterReply.DENY; // Deny logs from a specific noisy package
+            return FilterReply.DENY;
         }
-        return FilterReply.NEUTRAL; // Let other filters or the appender decide
+        return FilterReply.NEUTRAL;
     }
 }
