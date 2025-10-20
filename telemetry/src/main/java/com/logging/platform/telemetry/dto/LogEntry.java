@@ -1,4 +1,4 @@
-package com.logging.platform.dto;
+package com.logging.platform.telemetry.dto;
 
 import java.time.LocalTime;
 

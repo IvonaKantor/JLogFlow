@@ -1,4 +1,4 @@
-package com.logging.platform.config;
+package com.logging.platform.telemetry.config;
 
 public class KafkaTopics {
     private String topic;
