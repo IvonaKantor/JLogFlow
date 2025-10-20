@@ -1,4 +1,4 @@
-package org.jlog.flow.consumer;
+package com.logging.platform.consumer;
 
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
