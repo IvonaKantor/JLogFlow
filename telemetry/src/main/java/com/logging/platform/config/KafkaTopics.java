@@ -1,4 +1,4 @@
-package org.jlog.flow.config;
+package com.logging.platform.config;
 
 public class KafkaTopics {
     private String topic;

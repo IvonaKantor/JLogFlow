@@ -1,4 +1,4 @@
-package org.jlog.flow.dto;
+package com.logging.platform.dto;
 
 import java.time.LocalTime;
 
