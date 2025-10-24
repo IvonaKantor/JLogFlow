@@ -8,7 +8,7 @@
         <artifactId>jlogflow</artifactId>
     </parent>
 
-    <artifactId>log-processing</artifactId>
+    <artifactId>log-parser</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

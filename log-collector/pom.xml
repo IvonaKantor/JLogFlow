@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>log-listener</artifactId>
+    <artifactId>log-collector</artifactId>
 
     <properties>
         <quarkus.version>3.6.4</quarkus.version>
