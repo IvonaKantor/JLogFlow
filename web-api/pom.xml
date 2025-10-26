@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.logging.platform</groupId>
-    <artifactId>web-app</artifactId>
+    <artifactId>web-api</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -16,7 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.8.2</quarkus.platform.version>
+        <quarkus.platform.version>3.28.5</quarkus.platform.version>
         <surefire-plugin.version>3.0.0</surefire-plugin.version>
     </properties>
 

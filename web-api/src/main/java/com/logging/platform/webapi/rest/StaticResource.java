@@ -1,4 +1,4 @@
-package com.logging.platform.webapp;
+package com.logging.platform.webapi.rest;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.Response;
 public class StaticResource {
 
     @GET
-    public Response static_resorces_serve(){
+    public Response staticResoursesServe(){
         return Response.ok().build();
     }
 }

@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.jlog.flow</groupId>
+        <groupId>com.logging.platform</groupId>
         <artifactId>jlogflow</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>log-collector</artifactId>
+    <artifactId>processor</artifactId>
 
     <properties>
         <quarkus.version>3.6.4</quarkus.version>
@@ -25,12 +25,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.jlog.flow</groupId>
-            <artifactId>telemetry</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>
