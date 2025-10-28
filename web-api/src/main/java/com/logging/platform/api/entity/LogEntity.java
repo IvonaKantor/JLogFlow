@@ -70,4 +70,8 @@ public class LogEntity extends PanacheEntity {
     public static List<LogEntity> findByService(String serviceName) {
         return list("serviceName", serviceName);
     }
+
+    public static long countByLevel(String level) {
+        return count("level", level);
+    }
 }
