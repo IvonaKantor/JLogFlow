@@ -31,4 +31,35 @@ public class LogEntity extends PanacheEntity {
     @Column(nullable = false)
     public LocalDateTime timestamp;
 
+    @ElementCollection
+    @CollectionTable(name = "metadata", joinColumns = @JoinColumn(name = "log_id"))
+    @MapKeyColumn(name = "metadata_key")
+    @Column(name = "metadata_value")
+    public Map<String, String> metadata;
+
+    @Column(length = 50)
+    public String sourceIp;
+
+    @Column(length = 100)
+    public String userId;
+
+    @Column
+    public Long responseTime;
+
+    @Column(length = 10)
+    public String httpMethod;
+
+    @Column
+    public Integer httpStatus;
+
+    public LogEntity() {
+    }
+
+    public LogEntity(String logId, String level, String message, String serviceName, LocalDateTime timestamp) {
+        this.logId = logId;
+        this.level = level;
+        this.message = message;
+        this.serviceName = serviceName;
+        this.timestamp = timestamp;
+    }
 }
