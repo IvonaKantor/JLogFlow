@@ -66,4 +66,8 @@ public class LogEntity extends PanacheEntity {
     public static List<LogEntity> findByLevel(String level) {
         return list("level", level);
     }
+
+    public static List<LogEntity> findByService(String serviceName) {
+        return list("serviceName", serviceName);
+    }
 }
