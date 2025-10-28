@@ -71,7 +71,17 @@ public class LogEntity extends PanacheEntity {
         return list("serviceName", serviceName);
     }
 
+    public static List<LogEntity> findRecentLogs(int count) {
+        return find("ORDER BY minute").page(0, count).list();
+    }
+
     public static long countByLevel(String level) {
         return count("level", level);
+    }
+
+    public static List<String> findDistinctServices() {
+        return getEntityManager()
+                .createQuery("SELECT DISTINCT serviceName FROM LogEntity WHERE serviceName IS NOT NULL", String.class)
+                .getResultList();
     }
 }
