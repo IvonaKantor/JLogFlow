@@ -62,4 +62,8 @@ public class LogEntity extends PanacheEntity {
         this.serviceName = serviceName;
         this.timestamp = timestamp;
     }
+
+    public static List<LogEntity> findByLevel(String level) {
+        return list("level", level);
+    }
 }
