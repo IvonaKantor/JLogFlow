@@ -2,27 +2,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.logging.platform</groupId>
+    <groupId>com.diploma.jlog</groupId>
     <artifactId>jlogflow</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>telemetry</module>
-        <module>log-processing</module>
-        <module>log-listener</module>
-        <module>web-app</module>
+        <module>server</module>
+        <module>jlog-agent</module>
+        <module>service-1</module>
+        <module>service-2</module>
     </modules>
 
     <properties>
-        <compiler-plugin.version>3.14.0</compiler-plugin.version>
-        <maven.compiler.release>17</maven.compiler.release>
+        <!-- config -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.24.2</quarkus.platform.version>
         <skipITs>true</skipITs>
+
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+
+        <!-- dependency -->
+        <quarkus.platform.version>3.29.0</quarkus.platform.version>
+
+        <!-- test dependency -->
+        <!-- -->
+
+        <!-- plugin -->
+        <compiler-plugin.version>3.14.0</compiler-plugin.version>
+        <maven.compiler.release>17</maven.compiler.release>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
     </properties>
 
@@ -39,6 +50,13 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- quarkus -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
+        </dependency>
+
+<!--
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-messaging</artifactId>
@@ -60,6 +78,7 @@
             <artifactId>smallrye-reactive-messaging-in-memory</artifactId>
             <scope>test</scope>
         </dependency>
+        -->
 
     </dependencies>
 
