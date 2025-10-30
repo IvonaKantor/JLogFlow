@@ -7,7 +7,7 @@
 
     <parent>
         <groupId>com.logging.platform</groupId>
-        <artifactId>jlogflow</artifactId>
+        <artifactId>jlog-flow</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
