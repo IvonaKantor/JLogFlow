@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>server</module>
+        <module>jlog-server</module>
         <module>jlog-agent</module>
         <module>service-1</module>
         <module>service-2</module>
