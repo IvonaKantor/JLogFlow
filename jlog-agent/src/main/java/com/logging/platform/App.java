@@ -1,4 +1,4 @@
-package com.diploma.jlog;
+package com.logging.platform;
 
 public class App 
 {

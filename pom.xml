@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.diploma.jlog</groupId>
+    <groupId>com.logging.platform</groupId>
     <artifactId>jlogflow</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>

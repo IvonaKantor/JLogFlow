@@ -6,7 +6,7 @@
     <artifactId>server</artifactId>
 
     <parent>
-        <groupId>com.diploma.jlog</groupId>
+        <groupId>com.logging.platform</groupId>
         <artifactId>jlogflow</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>

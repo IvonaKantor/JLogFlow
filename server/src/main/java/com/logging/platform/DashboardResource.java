@@ -1,4 +1,4 @@
-package com.diploma.jlog;
+package com.logging.platform;
 
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
