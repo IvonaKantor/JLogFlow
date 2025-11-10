@@ -1,15 +1,13 @@
 package com.logging.platform;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.jboss.logging.Logger;
 
-@Path("/hello")
-public class App {
+@Path("/api/logs")
+public class Resource {
 
-    private static final Logger LOG = Logger.getLogger(App.class);
+    private static final Logger LOG = Logger.getLogger(Resource.class);
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
