@@ -12,6 +12,6 @@ public class Writer {
     Emitter<Record<String, Message>> emitter;
 
     public void writeLog(Message message){
-        emitter.send();
+        emitter.send(Record.of(message.getServiceName(), message));
     }
 }
