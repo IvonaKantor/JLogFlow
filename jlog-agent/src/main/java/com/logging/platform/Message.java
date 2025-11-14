@@ -9,4 +9,8 @@ public class Message {
     private String message;
     private LocalDateTime timestamp;
     private String traceId;
+
+    public String getServiceName() {
+        return serviceName;
+    }
 }
