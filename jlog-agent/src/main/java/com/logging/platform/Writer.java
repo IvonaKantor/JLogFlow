@@ -1,17 +1,26 @@
 package com.logging.platform;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import io.smallrye.reactive.messaging.kafka.Record;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
+import jakarta.ws.rs.*;
+import jakarta.inject.Inject;
 
-@ApplicationScoped
+@Path("/api/logs")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class Writer {
 
+    @Inject
     @Channel("out")
     Emitter<Record<String, Message>> emitter;
 
-    public void writeLog(Message message){
+    @POST
+    @Path("/write")
+    public Response writeLog(Message message) {
         emitter.send(Record.of(message.getServiceName(), message));
+        return Response.ok().entity("log sent").build();
     }
 }
