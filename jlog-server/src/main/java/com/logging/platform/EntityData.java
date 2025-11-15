@@ -2,6 +2,7 @@ package com.logging.platform;
 
 import jakarta.persistence.Entity;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 import java.time.LocalDateTime;
 
 @Entity
