@@ -23,4 +23,10 @@ public class Writer {
         emitter.send(Record.of(message.getServiceName(), message));
         return Response.ok().entity("log sent").build();
     }
+
+    @GET
+    @Path("/health")
+    public Response health() {
+        return Response.ok().build();
+    }
 }
