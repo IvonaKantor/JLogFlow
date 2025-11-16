@@ -17,6 +17,12 @@
             <artifactId>quarkus-rest</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.logging.platform</groupId>
+            <artifactId>jlog-flow</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- test dependency -->
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -31,6 +37,12 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-orm-panache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.logging.platform</groupId>
+            <artifactId>jlog-agent</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
