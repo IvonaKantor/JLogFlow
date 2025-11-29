@@ -1,5 +1,6 @@
 package com.logging.platform;
 
+import io.smallrye.mutiny.Multi;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.reactive.messaging.Channel;
@@ -27,5 +28,14 @@ public class Resource {
     @Path("/health")
     public Response health() {
         return Response.ok().build();
+    }
+
+    @Channel("logs")
+    Multi<Message> messages;
+
+    @GET
+    @Produces(MediaType.SERVER_SENT_EVENTS)
+    public Multi<Message> stream() {
+        return messages;
     }
 }
