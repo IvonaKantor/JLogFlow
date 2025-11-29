@@ -5,7 +5,7 @@ import org.eclipse.microprofile.reactive.messaging.Incoming;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class Handler {
+public class Processor {
 
     @Incoming("in")
     @Transactional
