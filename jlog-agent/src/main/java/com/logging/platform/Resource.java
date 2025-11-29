@@ -8,9 +8,7 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 import jakarta.ws.rs.*;
 import jakarta.inject.Inject;
 
-@Path("/api/logs")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
+@Path("/logs")
 public class Resource {
 
     @Inject
@@ -19,6 +17,7 @@ public class Resource {
 
     @POST
     @Path("/request")
+    @Produces(MediaType.TEXT_PLAIN)
     public Response writeLog(Message message) {
         emitter.send(Record.of(message.getServiceName(), message));
         return Response.ok().entity("log sent").build();
