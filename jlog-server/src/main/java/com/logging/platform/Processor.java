@@ -11,19 +11,8 @@ public class Processor {
     @Incoming("requests")
     @Outgoing("logs")
     @Transactional
-    public void handle(Message message) {
-        EntityData entity = new EntityData();
-        entity.level = message.getLevel();
-        entity.serviceName = message.getServiceName();
-        entity.message = message.getMessage();
-        entity.timestamp = message.getTimestamp();
-        entity.traceId = message.getTraceId();
-
-        entity.persist();
+    public Message process(String message) throws InterruptedException {
+        return new Message("testService", "INFO", "test");
     }
 
-    private void perform(Message log) {
-        if ("ERROR".equals(log.getLevel())) {
-        }
-    }
 }
