@@ -11,7 +11,7 @@ import jakarta.ws.rs.core.MediaType;
 public class Service {
 
     @Inject
-    Writer writer;
+    Resource resource;
 
     @GET
     @Path("/operation")
@@ -21,7 +21,7 @@ public class Service {
         log.setMessage("Hello World");
         log.setLevel("INFO");
 
-        writer.writeLog(log);
+        resource.writeLog(log);
 
         return "Hello World";
     }
