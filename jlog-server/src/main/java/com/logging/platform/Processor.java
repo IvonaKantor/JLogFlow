@@ -11,8 +11,8 @@ public class Processor {
     @Incoming("requests")
     @Outgoing("logs")
     @Transactional
-    public Message process(String message) throws InterruptedException {
-        return new Message("testService", "INFO", "test");
+    public Log process(String message) throws InterruptedException {
+        return new Log("testService", "INFO", "test");
     }
 
 }

@@ -9,18 +9,19 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 import jakarta.ws.rs.*;
 import jakarta.inject.Inject;
 
+
 @Path("/logs")
 public class Resource {
 
     @Inject
-    @Channel("message")
-    Emitter<Record<String, Message>> emitter;
+    @Channel("log-requests")
+    Emitter<Record<String, Log>> emitter;
 
     @POST
     @Path("/request")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response writeLog(Message message) {
-        emitter.send(Record.of(message.getServiceName(), message));
+    public Response writeLog(Log log) {
+        emitter.send(Record.of(log.getServiceName(), log));
         return Response.ok().entity("log sent").build();
     }
 
@@ -31,11 +32,11 @@ public class Resource {
     }
 
     @Channel("logs")
-    Multi<Message> messages;
+    Multi<Log> messages;
 
     @GET
     @Produces(MediaType.SERVER_SENT_EVENTS)
-    public Multi<Message> stream() {
+    public Multi<Log> stream() {
         return messages;
     }
 }

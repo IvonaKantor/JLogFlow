@@ -2,7 +2,7 @@ package com.logging.platform;
 
 import java.time.LocalDateTime;
 
-public class Message {
+public class Log {
 
     private String serviceName;
     private String level;
@@ -10,18 +10,18 @@ public class Message {
     private LocalDateTime timestamp;
     private String traceId;
 
-    public Message() {
+    public Log() {
         this.timestamp = LocalDateTime.now();
     }
 
-    public Message(String serviceName, String level, String message) {
+    public Log(String serviceName, String level, String message) {
         this();
         this.serviceName = serviceName;
         this.level = level;
         this.message = message;
     }
 
-    public Message(String serviceName, String level, String message, String traceId) {
+    public Log(String serviceName, String level, String message, String traceId) {
         this(serviceName, level, message);
         this.traceId = traceId;
     }

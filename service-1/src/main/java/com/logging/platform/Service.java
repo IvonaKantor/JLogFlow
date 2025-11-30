@@ -16,7 +16,7 @@ public class Service {
     @GET
     @Path("/operation")
     public String operation() {
-        Message log = new Message();
+        Log log = new Log();
         log.setServiceName("service1");
         log.setMessage("Hello World");
         log.setLevel("INFO");
