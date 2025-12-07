@@ -56,11 +56,11 @@
             <artifactId>quarkus-arc</artifactId>
         </dependency>
 
-<!--
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-messaging</artifactId>
-        </dependency>-->
+        <!--
+                <dependency>
+                    <groupId>io.quarkus</groupId>
+                    <artifactId>quarkus-messaging</artifactId>
+                </dependency>-->
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -68,17 +68,17 @@
             <version>2.0.17</version>
         </dependency>
 
-       <!-- <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-messaging-kafka</artifactId>
-        </dependency>
+        <!-- <dependency>
+             <groupId>io.quarkus</groupId>
+             <artifactId>quarkus-messaging-kafka</artifactId>
+         </dependency>
 
-        <dependency>
-            <groupId>io.smallrye.reactive</groupId>
-            <artifactId>smallrye-reactive-messaging-in-memory</artifactId>
-            <scope>test</scope>
-        </dependency>
-        -->
+         <dependency>
+             <groupId>io.smallrye.reactive</groupId>
+             <artifactId>smallrye-reactive-messaging-in-memory</artifactId>
+             <scope>test</scope>
+         </dependency>
+         -->
 
     </dependencies>
 
@@ -95,7 +95,7 @@
                             <goal>build</goal>
                             <goal>generate-code</goal>
                             <goal>generate-code-tests</goal>
-                           <!-- <goal>native-image-agent</goal>-->
+                            <!-- <goal>native-image-agent</goal>-->
                         </goals>
                     </execution>
                 </executions>
