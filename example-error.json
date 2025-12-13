@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-12-13T23:59:16.8690846+01:00",
+  "sequence": 2080,
+  "loggerClassName": "org.slf4j.impl.Slf4jLogger",
+  "loggerName": "com.logging.platform.LogGenerator",
+  "level": "ERROR",
+  "message": "test exception",
+  "threadName": "pool-8-thread-1",
+  "threadId": 56,
+  "mdc": {},
+  "ndc": "",
+  "hostName": "hp-840-g5",
+  "processName": "C:\\Users\\iwona\\.jdks\\temurin-17.0.16\\bin\\java.exe",
+  "processId": 14664,
+  "exception": {
+    "refId": 1,
+    "exceptionType": "java.lang.RuntimeException",
+    "message": "test exception",
+    "frames": [
+      {
+        "class": "com.logging.platform.LogGenerator",
+        "method": "lambda$startGenerating$0",
+        "line": 41
+      },
+      {
+        "class": "java.util.concurrent.Executors$RunnableAdapter",
+        "method": "call",
+        "line": 539
+      },
+      {
+        "class": "java.util.concurrent.FutureTask",
+        "method": "runAndReset",
+        "line": 305
+      },
+      {
+        "class": "java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask",
+        "method": "run",
+        "line": 305
+      },
+      {
+        "class": "java.util.concurrent.ThreadPoolExecutor",
+        "method": "runWorker",
+        "line": 1136
+      },
+      {
+        "class": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "method": "run",
+        "line": 635
+      },
+      {
+        "class": "java.lang.Thread",
+        "method": "run",
+        "line": 840
+      }
+    ]
+  }
+}
