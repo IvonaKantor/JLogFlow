@@ -45,7 +45,7 @@ public class JLogAgent {
 
         try {
             logFile = new File(logFilePath);
-        }catch (Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e.getMessage(), e);
         }
         try (final var processor = new KafkaLogProcessor(producer, kafkaTopic)) {
