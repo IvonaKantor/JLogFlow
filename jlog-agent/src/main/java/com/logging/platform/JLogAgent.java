@@ -28,9 +28,9 @@ public class JLogAgent {
         final var kafka = System.getenv(JLOG_KAFKA_SERVER);
         final var topic = System.getenv(JLOG_KAFKA_TOPIC);
 
-        final var logFilePath = nonNull(kafka) && kafka.isEmpty() ? path : System.getProperty("java.io.tmpdir") + "app.log";
-        final var kafkaServer = nonNull(path) && path.isEmpty() ? path : "localhost:9092";
-        final var kafkaTopic = nonNull(topic) && topic.isEmpty() ? topic : "logs";
+        final var logFilePath = nonNull(kafka) && !kafka.isEmpty() ? path : System.getProperty("java.io.tmpdir") + "app.log";
+        final var kafkaServer = nonNull(path) && !path.isEmpty() ? path : "localhost:9092";
+        final var kafkaTopic = nonNull(topic) && !topic.isEmpty() ? topic : "logs";
 
         final var props = new Properties();
 
