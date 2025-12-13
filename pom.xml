@@ -12,6 +12,7 @@
         <module>jlog-agent</module>
         <module>service-1</module>
         <module>service-2</module>
+        <module>jlog-mdc-appender</module>
     </modules>
 
     <properties>
