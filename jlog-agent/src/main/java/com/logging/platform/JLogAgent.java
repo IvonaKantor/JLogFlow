@@ -28,8 +28,8 @@ public class JLogAgent {
         final var kafka = System.getenv(JLOG_KAFKA_SERVER);
         final var topic = System.getenv(JLOG_KAFKA_TOPIC);
 
-        final var logFilePath = nonNull(kafka) && !kafka.isEmpty() ? path : System.getProperty("java.io.tmpdir") + "app.log";
-        final var kafkaServer = nonNull(path) && !path.isEmpty() ? path : "localhost:9092";
+        final var logFilePath = nonNull(path) && !path.isEmpty() ? path : System.getProperty("java.io.tmpdir") + "app.log";
+        final var kafkaServer = nonNull(kafka) && !kafka.isEmpty() ? kafka : "localhost:9092";
         final var kafkaTopic = nonNull(topic) && !topic.isEmpty() ? topic : "logs";
 
         final var props = new Properties();
@@ -41,8 +41,13 @@ public class JLogAgent {
         props.put(ProducerConfig.RETRIES_CONFIG, 3);
 
         final var producer = new KafkaProducer<String, String>(props);
-        final var logFile = new File(logFilePath);
+        final File logFile;
 
+        try {
+            logFile = new File(logFilePath);
+        }catch (Exception e) {
+            throw new RuntimeException(e.getMessage(), e);
+        }
         try (final var processor = new KafkaLogProcessor(producer, kafkaTopic)) {
 
             final var tailer = new LogFileHandler(logFile, processor);
