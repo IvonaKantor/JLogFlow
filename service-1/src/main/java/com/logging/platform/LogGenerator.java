@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class LogGenerator {
 
     private static final Logger log = LoggerFactory.getLogger(LogGenerator.class);
+    private static long counter = 0;
 
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
@@ -36,7 +37,12 @@ public class LogGenerator {
             try {
                 final String logMessage = "Generated log entry: New application event occurred at " + System.currentTimeMillis();
 
-                log.info(logMessage);
+                if(counter % 10 == 0) {
+                    log.error("test exception", new RuntimeException("test exception"));
+                }else{
+                    log.info(logMessage);
+                }
+                counter++;
             } catch (Exception e) {
                 log.error("Error generating log.", e);
             }
