@@ -29,7 +29,6 @@
         <quarkus.platform.version>3.29.0</quarkus.platform.version>
 
         <!-- test dependency -->
-        <!-- -->
 
         <!-- plugin -->
         <compiler-plugin.version>3.14.0</compiler-plugin.version>
@@ -54,6 +53,13 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>
+        </dependency>
+
+        <!-- logback-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.5.22</version>
         </dependency>
 
         <!--
