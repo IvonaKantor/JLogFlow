@@ -1,3 +1,7 @@
 <configuration>
+    <appender name="" class="ch.qos.logback.core.FileAppender">
+        <file>app.log</file>
+        <append>true</append>
+    </appender>
 
 </configuration>
