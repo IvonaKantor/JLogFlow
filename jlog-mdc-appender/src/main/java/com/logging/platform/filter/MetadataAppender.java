@@ -1,22 +1,13 @@
 package com.logging.platform.filter;
 
-import io.quarkus.logging.LoggingFilter;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 
-import java.util.logging.Filter;
-import java.util.logging.LogRecord;
+import ch.qos.logback.core.filter.Filter;
+import ch.qos.logback.core.spi.FilterReply;
 
-@LoggingFilter(name="filter")
-public class MetadataAppender implements Filter {
-
-    private final String part;
-
-    public MetadataAppender(@ConfigProperty(name = "filter.part") String part) {
-        this.part = part;
-    }
+public class MetadataAppender extends Filter {
 
     @Override
-    public boolean isLoggable(LogRecord record) {
-        return !record.getMessage().contains(part);
+    public FilterReply decide(Object o) {
+        return null;
     }
 }
