@@ -12,7 +12,6 @@
         <module>jlog-agent</module>
         <module>service-1</module>
         <module>service-2</module>
-        <module>jlog-mdc-appender</module>
     </modules>
 
     <properties>
@@ -28,6 +27,7 @@
 
         <!-- dependency -->
         <quarkus.platform.version>3.29.0</quarkus.platform.version>
+        <io.quarkiverse.logging.logback.varsion>1.5.22</io.quarkiverse.logging.logback.varsion>
 
         <!-- test dependency -->
 
