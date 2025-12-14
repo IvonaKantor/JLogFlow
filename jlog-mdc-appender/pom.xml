@@ -8,4 +8,11 @@
     </parent>
     <artifactId>jlog-mdc-appender</artifactId>
     <name>jlog-mdc-appender</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.slf4j</groupId>
+            <artifactId>slf4j-jboss-logmanager</artifactId>
+        </dependency>
+    </dependencies>
 </project>
