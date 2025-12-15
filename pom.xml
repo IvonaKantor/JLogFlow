@@ -48,10 +48,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
-
-    </dependencies>
-
     <build>
         <plugins>
             <plugin>
