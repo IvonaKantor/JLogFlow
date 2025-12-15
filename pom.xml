@@ -25,6 +25,8 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
 
+        <org.mapstruct.version>1.6.3</org.mapstruct.version>
+
         <!-- dependency -->
         <quarkus.platform.version>3.30.3</quarkus.platform.version>
 
