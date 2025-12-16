@@ -1,6 +1,5 @@
 package com.logging.platform;
 
-
 import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 
