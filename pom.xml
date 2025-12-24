@@ -26,6 +26,9 @@
         <maven.compiler.target>21</maven.compiler.target>
 
         <!-- dependency -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+
+        <jackson-databind.version>2.20.1</jackson-databind.version>
         <quarkus.platform.version>3.29.0</quarkus.platform.version>
 
         <!-- test dependency -->
