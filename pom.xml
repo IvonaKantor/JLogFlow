@@ -28,6 +28,9 @@
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
 
         <!-- dependency -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+
+        <jackson-databind.version>2.20.1</jackson-databind.version>
         <quarkus.platform.version>3.30.3</quarkus.platform.version>
 
         <!-- test dependency -->
