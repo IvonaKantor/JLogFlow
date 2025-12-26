@@ -3,6 +3,8 @@ package com.logging.platform.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.smallrye.common.constraint.NotNull;
 
+import java.util.List;
+
 public class LogDataExceptionDto {
 
     @NotNull
@@ -15,6 +17,17 @@ public class LogDataExceptionDto {
     @NotNull
     @JsonProperty("message")
     public String message;
+
+    @JsonProperty("frames")
+    private List<LogDataExceptionframeDto> frames;
+
+    public List<LogDataExceptionframeDto> getFrames() {
+        return frames;
+    }
+
+    public void setFrames(List<LogDataExceptionframeDto> frames) {
+        this.frames = frames;
+    }
 
     public Long getRefId() {
         return refId;
