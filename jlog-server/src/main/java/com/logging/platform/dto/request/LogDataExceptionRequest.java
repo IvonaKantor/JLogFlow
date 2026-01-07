@@ -1,11 +1,11 @@
-package com.logging.platform.dto;
+package com.logging.platform.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.smallrye.common.constraint.NotNull;
 
 import java.util.List;
 
-public class LogDataExceptionDto {
+public class LogDataExceptionRequest {
 
     @NotNull
     @JsonProperty("refId")
@@ -19,13 +19,13 @@ public class LogDataExceptionDto {
     public String message;
 
     @JsonProperty("frames")
-    private List<LogDataExceptionframeDto> frames;
+    private List<LogDataExceptionframeRequest> frames;
 
-    public List<LogDataExceptionframeDto> getFrames() {
+    public List<LogDataExceptionframeRequest> getFrames() {
         return frames;
     }
 
-    public void setFrames(List<LogDataExceptionframeDto> frames) {
+    public void setFrames(List<LogDataExceptionframeRequest> frames) {
         this.frames = frames;
     }
 

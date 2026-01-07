@@ -1,9 +1,9 @@
-package com.logging.platform.dto;
+package com.logging.platform.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.smallrye.common.constraint.NotNull;
 
-public class LogDataExceptionframeDto {
+public class LogDataExceptionframeRequest {
 
     @NotNull
     @JsonProperty("clazz")

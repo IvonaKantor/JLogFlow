@@ -1,4 +1,4 @@
-package com.logging.platform.dto;
+package com.logging.platform.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.smallrye.common.constraint.NotNull;
@@ -6,7 +6,7 @@ import io.smallrye.common.constraint.NotNull;
 import java.util.Date;
 import java.util.Map;
 
-public class LogDataDto {
+public class LogDataRequest {
 
     @NotNull
     @JsonProperty("timestamp")
@@ -39,7 +39,7 @@ public class LogDataDto {
     private Map<String, Object> mdc;
 
     @JsonProperty("exception")
-    private LogDataExceptionDto exception;
+    private LogDataExceptionRequest exception;
 
     @JsonProperty("serviceName")
     private String serviceName;
@@ -116,11 +116,11 @@ public class LogDataDto {
         this.mdc = mdc;
     }
 
-    public LogDataExceptionDto getException() {
+    public LogDataExceptionRequest getException() {
         return exception;
     }
 
-    public void setException(LogDataExceptionDto exception) {
+    public void setException(LogDataExceptionRequest exception) {
         this.exception = exception;
     }
 

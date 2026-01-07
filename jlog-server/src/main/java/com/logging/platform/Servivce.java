@@ -1,7 +1,7 @@
 package com.logging.platform;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.logging.platform.dto.LogDataDto;
+import com.logging.platform.dto.request.LogDataRequest;
 import com.logging.platform.entity.LogDataEntity;
 import com.logging.platform.mapper.LogDataMapper;
 import com.logging.platform.models.LogData;
@@ -20,7 +20,7 @@ public class Service {
     LogDataMapper logDataMapper;
 
     @Transactional
-    public LogDataDto createLog(LogData request) {
+    public LogDataRequest createLog(LogData request) {
         LogDataEntity entity = logDataMapper.toEntity(request);
 
         entity.persist(); 
@@ -38,7 +38,7 @@ public class Service {
         return logDataMapper.toResponseList(entities);
     }
 
-    public LogDataDto getById(Long id) {
+    public LogDataRequest getById(Long id) {
         LogDataEntity entity = LogDataEntity.findById(id);
         if (entity == null) {
             return null;
@@ -46,20 +46,20 @@ public class Service {
         return logDataMapper.toResponse(entity);
     }
 
-    public List<LogDataDto> getAll() {
+    public List<LogDataRequest> getAll() {
         List<LogDataEntity> entities = LogDataEntity.listAll();
         return logDataMapper.toResponseList(entities);
     }
  
     @Transactional
-    public LogDataDto createLogFromJson(String json) throws Exception { 
+    public LogDataRequest createLogFromJson(String json) throws Exception {
         LogData request = objectMapper.readValue(json, LogData.class);
  
         return createLog(request);
     }
  
     public String getLogAsJson(Long id) throws Exception {
-        LogDataDto response = getById(id);
+        LogDataRequest response = getById(id);
         if (response == null) {
             return null;
         }
