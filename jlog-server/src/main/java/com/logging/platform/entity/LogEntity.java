@@ -1,7 +1,7 @@
 
 package com.logging.platform.entity;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import com.logging.platform.models.LogDataLevel;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
@@ -14,7 +14,7 @@ import java.util.Map;
 public class LogEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "log_seq)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "log_seq")
     @SequenceGenerator(
             name = "log_seq",
             sequenceName = "log_id_sequence",
@@ -43,8 +43,9 @@ public class LogEntity {
     @Column(name = "sequence")
     public Integer sequence;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "level", nullable = false, length = 20)
-    public String level;
+    public LogDataLevel level;
 
     @Column(name = "message", nullable = false)
     public String message;
@@ -53,7 +54,7 @@ public class LogEntity {
     public String threadName;
 
     @Column(name = "thread_id")
-    public int threadId;
+    public int thread_id;
 
     @JdbcTypeCode(SqlTypes.JSON)
     @Column(name = "mdc")

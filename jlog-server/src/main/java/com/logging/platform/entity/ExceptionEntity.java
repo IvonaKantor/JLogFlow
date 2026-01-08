@@ -1,6 +1,5 @@
 package com.logging.platform.entity;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -12,16 +11,20 @@ import java.util.List;
 public class ExceptionEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "exc_seq")
+    @SequenceGenerator(
+            name = "exc_seq",
+            sequenceName = "exc_id_sequence",
+            allocationSize = 1
+    )
+    @Column(name="id")
     public int id;
 
-    @Column(name = "ref_id")
-    public int refId;
+    public int ref_id;
 
     @Column(name = "exception_type", nullable = false, length = 255)
     public String exceptionType;
 
-    @Column(name = "message")
     public String message;
 
 
