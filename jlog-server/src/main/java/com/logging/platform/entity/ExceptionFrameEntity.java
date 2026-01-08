@@ -1,6 +1,5 @@
 package com.logging.platform.entity;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,21 +7,19 @@ import jakarta.persistence.*;
 public class ExceptionFrameEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "exc_fr_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "exception_frame_seq")
     @SequenceGenerator(
-            name = "exc_fr_seq",
-            sequenceName = "exc_fr_id_sequence",
+            name = "exception_frame_seq",
+            sequenceName = "exception_frame_id_seq",
             allocationSize = 1
     )
-    @Column(name="id")
     public int id;
 
-    @Column(name = "class_name", nullable = false)
+    @Column(nullable = false)
     public String className;
 
-    @Column(name = "method_name", nullable = false)
+    @Column(nullable = false)
     public String methodName;
 
-    @Column(name = "line_number")
     public int lineNumber;
 }

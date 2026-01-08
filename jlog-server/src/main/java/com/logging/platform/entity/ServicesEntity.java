@@ -10,20 +10,19 @@ import java.util.List;
 public class ServicesEntity extends PanacheEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "serv_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "service_seq")
     @SequenceGenerator(
-            name = "serv_seq",
-            sequenceName = "serv_id_sequence",
+            name = "service_seq",
+            sequenceName = "service_id_sequence",
             allocationSize = 1
     )
-    @Column(name="id")
     public int id;
 
-    @Column(name = "service_name", nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     public String serviceName;
 
-    @Column(name = "service_id", unique = true)
-    public String service_id;
+    @Column(unique = true)
+    public String serviceId;
 
     @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
     public List<LogEntity> logs;

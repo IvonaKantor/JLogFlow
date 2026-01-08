@@ -17,18 +17,17 @@ public class ExceptionEntity {
             sequenceName = "exc_id_sequence",
             allocationSize = 1
     )
-    @Column(name="id")
     public int id;
 
-    public int ref_id;
+    public int refIid;
 
-    @Column(name = "exception_type", nullable = false, length = 255)
+    @Column(nullable = false)
     public String exceptionType;
 
     public String message;
 
 
-    @Column(name = "timestamp", updatable = false)
+    @Column(updatable = false)
     public LocalDateTime timestamp;
 
     @OneToMany(mappedBy = "exception", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
