@@ -9,17 +9,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "exceptions")
-public class ExceptionEntity extends PanacheEntity {
+public class ExceptionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
     @Column(name = "ref_id")
-    public int ref_id;
+    public int refId;
 
     @Column(name = "exception_type", nullable = false, length = 255)
-    public String exception_type;
+    public String exceptionType;
 
     @Column(name = "message")
     public String message;

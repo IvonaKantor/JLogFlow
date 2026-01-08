@@ -14,10 +14,10 @@ public class ServicesEntity extends PanacheEntity {
     public Long id;
 
     @Column(name = "service_name", nullable = false, unique = true)
-    public String service_name;
+    public String serviceName;
 
-    @Column(name = "service_id", unique = true)
-    public String service_id;
+    @Column(name = "service_id")
+    public String serviceId;
 
     @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
     public List<LogEntity> logs;

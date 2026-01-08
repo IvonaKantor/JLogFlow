@@ -11,25 +11,31 @@ import java.util.Map;
 
 @Entity
 @Table(name = "logs")
-public class LogEntity extends PanacheEntity {
+public class LogEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "log_seq)
+    @SequenceGenerator(
+            name = "log_seq",
+            sequenceName = "log_id_sequence",
+            allocationSize = 1
+    )
+    @Column(name="id")
     public int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
-    public ServicesEntity service_id;
+    public ServicesEntity serviceId;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "exception_id")
-    public ExceptionEntity exception_id;
+    public ExceptionEntity exceptionId;
 
     @Column(name = "logger_class_name")
-    public String logger_class_name;
+    public String loggerClassName;
 
     @Column(name = "logger_name")
-    public String logger_name;
+    public String loggerName;
 
     @Column(name = "timestamp", nullable = false)
     public LocalDateTime timestamp;
@@ -44,10 +50,10 @@ public class LogEntity extends PanacheEntity {
     public String message;
 
     @Column(name = "thread_name", length = 255)
-    public String thread_name;
+    public String threadName;
 
     @Column(name = "thread_id")
-    public int thread_id;
+    public int threadId;
 
     @JdbcTypeCode(SqlTypes.JSON)
     @Column(name = "mdc")
@@ -56,18 +62,12 @@ public class LogEntity extends PanacheEntity {
     @Column(name = "ndc")
     public String ndc;
 
-    @Column(name = "update_data", updatable = false)
-    public LocalDateTime update_data;
-
     @Column(name = "create_data", updatable = false)
-    public LocalDateTime create_data;
-
-    @Column(name = "updated_at")
-    public LocalDateTime updated_at;
+    public LocalDateTime createData;
 
     @Column(name = "process_name", nullable = false)
-    public String process_name;
+    public String processName;
 
     @Column(name = "process_id", nullable = false)
-    public Integer process_id;
+    public Integer processId;
 }
