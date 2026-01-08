@@ -39,8 +39,8 @@ public class LogEntity {
 
     public Integer sequence;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 20)
+    @Enumerated
+    @Column(nullable = false)
     public LogDataLevel level;
 
     @Column(nullable = false)
