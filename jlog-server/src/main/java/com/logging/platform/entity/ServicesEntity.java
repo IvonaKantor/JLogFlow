@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "services")
-public class ServiceEntity extends PanacheEntity {
+public class ServicesEntity extends PanacheEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,21 +20,6 @@ public class ServiceEntity extends PanacheEntity {
     @Column(name = "service_id", unique = true)
     public String serviceId;
 
-    @Column(name = "description")
-    public String description;
-
-    @Column(name = "created_at", updatable = false)
-    public LocalDateTime createdAt;
-
-    @Column(name = "updated_at")
-    public LocalDateTime updatedAt;
-
     @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
     public List<LogEntity> logs;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-    }
 }

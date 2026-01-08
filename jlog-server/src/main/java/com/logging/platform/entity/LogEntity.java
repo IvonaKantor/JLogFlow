@@ -22,19 +22,7 @@ public class LogEntity extends PanacheEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
-    public ServiceEntity service;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "host_id")
-    public HostEntity host;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "process_id")
-    public ProcessEntity process;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "logger_id")
-    public LoggerEntity logger;
+    public ServicesEntity service;
 
     @Column(name = "timestamp", nullable = false)
     public LocalDateTime timestamp;
