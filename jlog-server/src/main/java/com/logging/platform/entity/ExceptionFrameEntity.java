@@ -1,0 +1,22 @@
+package com.logging.platform.entity;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "exception_frames")
+public class ExceptionFrameEntity extends PanacheEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int id;
+
+    @Column(name = "class_name", nullable = false)
+    public String className;
+
+    @Column(name = "method_name", nullable = false)
+    public String methodName;
+
+    @Column(name = "line_number")
+    public int lineNumber;
+}
