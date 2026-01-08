@@ -16,7 +16,7 @@ public class ServicesEntity extends PanacheEntity {
     @Column(name = "service_name", nullable = false, unique = true)
     public String serviceName;
 
-    @Column(name = "service_id", unique = "true")
+    @Column(name = "service_id", unique = true)
     public String serviceId;
 
     @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
