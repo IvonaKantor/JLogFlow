@@ -13,13 +13,58 @@ public class ExceptionFrameEntity {
             sequenceName = "exception_frame_id_seq",
             allocationSize = 1
     )
-    public int id;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public ExceptionEntity getExceptionId() {
+        return exceptionId;
+    }
+
+    public void setException(ExceptionEntity exceptionId) {
+        this.exceptionId = exceptionId;
+    }
+
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public String getMethodName() {
+        return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
+    }
+
+    public int getLineNumber() {
+        return lineNumber;
+    }
+
+    public void setLineNumber(int lineNumber) {
+        this.lineNumber = lineNumber;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "exception_id")
+    private ExceptionEntity exceptionId;
 
     @Column(nullable = false)
-    public String className;
+    private String className;
 
     @Column(nullable = false)
-    public String methodName;
+    private String methodName;
 
-    public int lineNumber;
+    private int lineNumber;
 }
