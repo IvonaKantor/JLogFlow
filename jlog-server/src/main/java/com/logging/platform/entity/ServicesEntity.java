@@ -1,13 +1,12 @@
 package com.logging.platform.entity;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "services")
-public class ServicesEntity extends PanacheEntity {
+public class ServicesEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "service_seq")
@@ -16,14 +15,46 @@ public class ServicesEntity extends PanacheEntity {
             sequenceName = "service_id_sequence",
             allocationSize = 1
     )
-    public int id;
+    private int id;
 
     @Column(nullable = false, unique = true)
-    public String serviceName;
+    private String serviceName;
 
     @Column(unique = true)
-    public String serviceId;
+    private String serviceId;
 
-    @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
-    public List<LogEntity> logs;
+    public List<LogEntity> getLogs() {
+        return logs;
+    }
+
+    public void setLogs(List<LogEntity> logs) {
+        this.logs = logs;
+    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @OneToMany(mappedBy = "serviceId", fetch = FetchType.LAZY)
+    private List<LogEntity> logs;
 }
