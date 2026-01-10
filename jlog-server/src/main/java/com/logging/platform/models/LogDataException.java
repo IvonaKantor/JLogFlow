@@ -10,7 +10,8 @@ public class LogDataException {
 
     private List<LogDataExceptionFrame> frames = new ArrayList<>();
 
-    public LogDataException() {}
+    public LogDataException() {
+    }
 
     public LogDataException(String exceptionType, String message) {
         this.exceptionType = exceptionType;
