@@ -20,47 +20,168 @@ public class LogEntity {
             sequenceName = "log_id_sequence",
             allocationSize = 1
     )
-    public int id;
+    private int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
-    public ServicesEntity serviceId;
+    private ServicesEntity serviceId;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public ServicesEntity getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(ServicesEntity serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    public ExceptionEntity getExceptionId() {
+        return exceptionId;
+    }
+
+    public void setExceptionId(ExceptionEntity exceptionId) {
+        this.exceptionId = exceptionId;
+    }
+
+    public String getLoggerClassName() {
+        return loggerClassName;
+    }
+
+    public void setLoggerClassName(String loggerClassName) {
+        this.loggerClassName = loggerClassName;
+    }
+
+    public String getLoggerName() {
+        return loggerName;
+    }
+
+    public void setLoggerName(String loggerName) {
+        this.loggerName = loggerName;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public Integer getSequence() {
+        return sequence;
+    }
+
+    public void setSequence(Integer sequence) {
+        this.sequence = sequence;
+    }
+
+    public LogDataLevel getLevel() {
+        return level;
+    }
+
+    public void setLevel(LogDataLevel level) {
+        this.level = level;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getThreadName() {
+        return threadName;
+    }
+
+    public void setThreadName(String threadName) {
+        this.threadName = threadName;
+    }
+
+    public int getThreadId() {
+        return threadId;
+    }
+
+    public void setThreadId(int threadId) {
+        this.threadId = threadId;
+    }
+
+    public String getNdc() {
+        return ndc;
+    }
+
+    public void setNdc(String ndc) {
+        this.ndc = ndc;
+    }
+
+    public LocalDateTime getCreateData() {
+        return createData;
+    }
+
+    public void setCreateData(LocalDateTime createData) {
+        this.createData = createData;
+    }
+
+    public String getProcessName() {
+        return processName;
+    }
+
+    public void setProcessName(String processName) {
+        this.processName = processName;
+    }
+
+    public Integer getProcessId() {
+        return processId;
+    }
+
+    public void setProcessId(Integer processId) {
+        this.processId = processId;
+    }
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "exception_id")
-    public ExceptionEntity exceptionId;
+    private ExceptionEntity exceptionId;
 
-    public String loggerClassName;
+    private String loggerClassName;
 
-    public String loggerName;
+    private String loggerName;
 
     @Column(nullable = false)
-    public LocalDateTime timestamp;
+    private LocalDateTime timestamp;
 
-    public Integer sequence;
+    private Integer sequence;
 
     @Enumerated
     @Column(nullable = false)
-    public LogDataLevel level;
+    private LogDataLevel level;
 
     @Column(nullable = false)
-    public String message;
+    private String message;
 
-    public String threadName;
+    private String threadName;
 
-    public int threadId;
+    private int threadId;
 
-    @JdbcTypeCode(SqlTypes.JSON)
-    public Map<String, Object> mdc;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "mdc_id")
+    private MdcEntity mdcEntity;
 
-    public String ndc;
+    private String ndc;
 
     @Column(updatable = false)
-    public LocalDateTime createData;
+    private LocalDateTime createData;
 
     @Column(nullable = false)
-    public String processName;
+    private String processName;
 
     @Column(nullable = false)
-    public Integer processId;
+    private Integer processId;
 }
