@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogDataException {
-    public Long refId;
-    public String exceptionType;
-    public String message;
+    private Long refId;
+    private String exceptionType;
+    private String message;
 
-    public List<LogDataExceptionFrame> frames = new ArrayList<>();
+    private List<LogDataExceptionFrame> frames = new ArrayList<>();
 
     public LogDataException() {}
 
