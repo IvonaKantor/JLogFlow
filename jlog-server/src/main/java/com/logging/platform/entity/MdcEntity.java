@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @Entity
-@Table(name="mdc")
+@Table(name = "mdc")
 public class MdcEntity {
 
     @Id
