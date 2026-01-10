@@ -5,10 +5,11 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name = "exceptions")
-public class ExceptionEntity {
+public class ExceptionEntity extends PanacheEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "exc_seq")

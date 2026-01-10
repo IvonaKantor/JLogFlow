@@ -1,12 +1,13 @@
 package com.logging.platform.entity;
 
 import jakarta.persistence.*;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 import java.util.List;
 
 @Entity
 @Table(name = "services")
-public class ServicesEntity {
+public class ServicesEntity extends PanacheEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "service_seq")

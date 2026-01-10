@@ -40,6 +40,10 @@
             <artifactId>quarkus-jdbc-postgresql</artifactId>
             <version>${quarkus-jdbc-postgresql}</version>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm-panache</artifactId>
+        </dependency>
 
         <!-- test dependency -->
         <dependency>

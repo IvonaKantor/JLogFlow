@@ -3,13 +3,14 @@ package com.logging.platform.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 
 @Entity
 @Table(name = "mdc")
-public class MdcEntity {
+public class MdcEntity extends PanacheEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mdc_seq")

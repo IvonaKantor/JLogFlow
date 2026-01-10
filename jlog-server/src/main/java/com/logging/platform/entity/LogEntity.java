@@ -4,10 +4,11 @@ package com.logging.platform.entity;
 import com.logging.platform.models.LogDataLevel;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name = "logs")
-public class LogEntity {
+public class LogEntity extends PanacheEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "log_seq")

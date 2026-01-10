@@ -1,10 +1,11 @@
 package com.logging.platform.entity;
 
 import jakarta.persistence.*;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name = "exception_frames")
-public class ExceptionFrameEntity {
+public class ExceptionFrameEntity extends PanacheEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "exception_frame_seq")
