@@ -12,14 +12,22 @@ public class LogData {
     private String message;
     private String threadName;
     private int threadId;
-    private Map<Object, Object> mdc;
     private String ndc;
+    private Map<String, Object> mdc;
     private String hostName;
     private String processName;
     private int processId;
     private LogDataException exception;
     private String serviceName;
     private String serviceId;
+
+    public Map<String, Object> getMdc() {
+        return mdc;
+    }
+
+    public void setMdc(Map<String, Object> mdc) {
+        this.mdc = mdc;
+    }
 
     public Date getTimestamp() {
         return timestamp;
@@ -83,14 +91,6 @@ public class LogData {
 
     public void setThreadId(int threadId) {
         this.threadId = threadId;
-    }
-
-    public Map<Object, Object> getMdc() {
-        return mdc;
-    }
-
-    public void setMdc(Map<Object, Object> mdc) {
-        this.mdc = mdc;
     }
 
     public String getNdc() {
