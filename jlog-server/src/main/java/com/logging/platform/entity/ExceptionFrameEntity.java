@@ -7,20 +7,23 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "exception_frames")
 public class ExceptionFrameEntity extends PanacheEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "exception_frame_seq")
-    @SequenceGenerator(
-            name = "exception_frame_seq",
-            sequenceName = "exception_frame_id_seq",
-            allocationSize = 1
-    )
-    private int id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "exception_id")
+    private ExceptionEntity exceptionId;
 
-    public int getId() {
+    @Column(nullable = false)
+    private String className;
+
+    @Column(nullable = false)
+    private String methodName;
+
+    private int lineNumber;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,16 +59,4 @@ public class ExceptionFrameEntity extends PanacheEntity {
     public void setLineNumber(int lineNumber) {
         this.lineNumber = lineNumber;
     }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "exception_id")
-    private ExceptionEntity exceptionId;
-
-    @Column(nullable = false)
-    private String className;
-
-    @Column(nullable = false)
-    private String methodName;
-
-    private int lineNumber;
 }

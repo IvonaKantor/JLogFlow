@@ -12,15 +12,6 @@ import java.util.Map;
 @Table(name = "mdc")
 public class MdcEntity extends PanacheEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mdc_seq")
-    @SequenceGenerator(
-            name = "mdc_seq",
-            sequenceName = "mdc_id_sequence",
-            allocationSize = 1
-    )
-    private int id;
-
     @Column(columnDefinition = "jsonb")
     @JdbcTypeCode(SqlTypes.JSON)
     private Map<String, Object> mdcData;
@@ -31,11 +22,11 @@ public class MdcEntity extends PanacheEntity {
     @OneToOne(mappedBy = "mdcEntity")
     private LogEntity logEntity;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

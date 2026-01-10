@@ -11,20 +11,27 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "exceptions")
 public class ExceptionEntity extends PanacheEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "exc_seq")
-    @SequenceGenerator(
-            name = "exc_seq",
-            sequenceName = "exc_id_sequence",
-            allocationSize = 1
-    )
-    private int id;
+    private int refIid;
 
-    public int getId() {
+    @Column(nullable = false)
+    private String exceptionType;
+
+    private String message;
+
+    @Column(updatable = false)
+    private LocalDateTime timestamp;
+
+    @OneToMany(mappedBy = "exceptionId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ExceptionFrameEntity> frames = new ArrayList<>();
+
+    @OneToOne(mappedBy = "exceptionId")
+    private LogEntity log;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -75,21 +82,4 @@ public class ExceptionEntity extends PanacheEntity {
     public void setLog(LogEntity log) {
         this.log = log;
     }
-
-    private int refIid;
-
-    @Column(nullable = false)
-    private String exceptionType;
-
-    private String message;
-
-
-    @Column(updatable = false)
-    private LocalDateTime timestamp;
-
-    @OneToMany(mappedBy = "exceptionId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<ExceptionFrameEntity> frames = new ArrayList<>();
-
-    @OneToOne(mappedBy = "exceptionId")
-    private LogEntity log;
 }

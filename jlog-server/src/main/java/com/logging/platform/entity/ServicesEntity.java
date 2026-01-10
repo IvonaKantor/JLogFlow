@@ -9,20 +9,14 @@ import java.util.List;
 @Table(name = "services")
 public class ServicesEntity extends PanacheEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "service_seq")
-    @SequenceGenerator(
-            name = "service_seq",
-            sequenceName = "service_id_sequence",
-            allocationSize = 1
-    )
-    private int id;
-
     @Column(nullable = false, unique = true)
     private String serviceName;
 
     @Column(unique = true)
     private String serviceId;
+
+    @OneToMany(mappedBy = "serviceId", fetch = FetchType.LAZY)
+    private List<LogEntity> logs;
 
     public List<LogEntity> getLogs() {
         return logs;
@@ -48,14 +42,11 @@ public class ServicesEntity extends PanacheEntity {
         this.serviceName = serviceName;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
-
-    @OneToMany(mappedBy = "serviceId", fetch = FetchType.LAZY)
-    private List<LogEntity> logs;
 }
