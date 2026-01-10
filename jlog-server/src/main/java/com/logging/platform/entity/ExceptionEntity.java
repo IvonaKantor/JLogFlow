@@ -17,22 +17,78 @@ public class ExceptionEntity {
             sequenceName = "exc_id_sequence",
             allocationSize = 1
     )
-    public int id;
+    private int id;
 
-    public int refIid;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getRefIid() {
+        return refIid;
+    }
+
+    public void setRefIid(int refIid) {
+        this.refIid = refIid;
+    }
+
+    public String getExceptionType() {
+        return exceptionType;
+    }
+
+    public void setExceptionType(String exceptionType) {
+        this.exceptionType = exceptionType;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public List<ExceptionFrameEntity> getFrames() {
+        return frames;
+    }
+
+    public void setFrames(List<ExceptionFrameEntity> frames) {
+        this.frames = frames;
+    }
+
+    public LogEntity getLog() {
+        return log;
+    }
+
+    public void setLog(LogEntity log) {
+        this.log = log;
+    }
+
+    private int refIid;
 
     @Column(nullable = false)
-    public String exceptionType;
+    private String exceptionType;
 
-    public String message;
+    private String message;
 
 
     @Column(updatable = false)
-    public LocalDateTime timestamp;
+    private LocalDateTime timestamp;
 
-    @OneToMany(mappedBy = "exception", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    public List<ExceptionFrameEntity> frames = new ArrayList<>();
+    @OneToMany(mappedBy = "exceptionId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ExceptionFrameEntity> frames = new ArrayList<>();
 
-    @OneToOne(mappedBy = "exception")
-    public LogEntity log;
+    @OneToOne(mappedBy = "exceptionId")
+    private LogEntity log;
 }
